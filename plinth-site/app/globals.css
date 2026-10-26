@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face { font-family: "Satoshi"; src: url("/fonts/Satoshi-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("/fonts/Satoshi-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("/fonts/Satoshi-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Satoshi"; src: url("/fonts/Satoshi-Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+@font-face { font-family: "Clash Display"; src: url("/fonts/ClashDisplay-Semibold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Clash Display"; src: url("/fonts/ClashDisplay-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("/fonts/JetBrainsMono-Variable.woff2") format("woff2"); font-weight: 100 800; font-display: swap; }
+
+:root {
+  --font-satoshi: "Satoshi";
+  --font-clash: "Clash Display";
+  --font-mono: "JetBrains Mono";
+}
+
+html { scroll-behavior: auto; -webkit-text-size-adjust: 100%; }
+body { @apply bg-bone font-sans text-ink antialiased; overflow-x: hidden; }
+h1, h2, h3 { @apply font-display; }
+
+:focus-visible { outline: 2px solid #0FA37F; outline-offset: 2px; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.has-cursor, html.has-cursor * { cursor: none !important; }
+}
+
+/* rule-draw link */
+.rule-link { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .35s cubic-bezier(.22,.72,.2,1); }
+.rule-link:hover { background-size: 100% 1px; }
+
+/* FAQ grid-row accordion */
+.faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.22,.72,.2,1); }
+.faq-panel[data-open="true"] { grid-template-rows: 1fr; }
+.faq-panel > div { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
