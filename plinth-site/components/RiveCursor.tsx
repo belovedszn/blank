@@ -54,7 +54,7 @@ function Cursor() {
   }, []);
 
   return (
-    <div ref={el} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[200] will-change-transform" style={{ width: 64, height: 64, marginLeft: -8, marginTop: -8 }}>
+    <div ref={el} aria-hidden className="pointer-events-none bg-yellow-500 fixed left-0 top-0 z-[200] will-change-transform" style={{ width: 64, height: 64, marginLeft: -8, marginTop: -8 }}>
       <RiveComponent />
     </div>
   );
